@@ -9,6 +9,8 @@ const path  = require('path'); //Import native node function, to manipulate publ
 const admin = require('./routes/admin');//Exports archve admin for routes
 const app   = express();
 
+const PORT  = 8080;
+
 //Config
     // Session
     app.use(session({
@@ -38,7 +40,7 @@ const app   = express();
 
     //Mongoose
     mongoose.Promise = global.Promise;
-    mongoose.connect("mongodb://localhost/appBlog").then(() => {
+    mongoose.connect("mongodb://localhost/appBlog", {useNewUrlParser: true, useUnifiedTopology: true}).then(() => {
         console.log("Conectado ao MongoDB!");
     }).catch((err) => {
         console.log("Erro ao conectar ao MongoDB " + err);
@@ -59,7 +61,7 @@ const app   = express();
 
 
 //Init server
-const PORT = 8089;
+
 app.listen(PORT, () => {
     console.log("Conectado ao servidor!");
 });
