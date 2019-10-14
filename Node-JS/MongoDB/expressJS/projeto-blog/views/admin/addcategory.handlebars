@@ -1,0 +1,19 @@
+{{#each errs}}
+  <div class="alert alert-danger">{{text}}</div>
+{{else}}
+
+{{/each}}
+<h2>Cadastrar Categorias</h2>
+<form action="/admin/category/new" method="POST">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Name address</label>
+    <input type="text" class="form-control" name="name" aria-describedby="emailHelp" placeholder="Enter Name categories">
+    
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Slug</label>
+    <input type="text" class="form-control" name="slug" placeholder="Enter Slog Categories">
+  </div>
+ 
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

@@ -1,0 +1,17 @@
+<div class="container">
+{{#each posts}}
+<form action="/att" method="GET">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Título</label>
+    <input type="text" class="form-control" name="titulo" aria-describedby="emailHelp" value="{{titulo}}">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Conteudo</label>
+    <textarea type="text" class="form-control" name="conteudo" placeholder="Conteudo">
+        {{conteudo}}
+    </textarea>
+  </div>
+    <td><a href="/att/{{id}}" type="submit"><button class="btn btn-success">Salvar</button></a></td>
+</form>
+{{/each}}
+</div>

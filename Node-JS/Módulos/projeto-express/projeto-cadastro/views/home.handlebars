@@ -1,0 +1,27 @@
+<h1>Lista de Postagem</h1>
+
+<div class="container">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Título</th>
+      <th scope="col">Conteúdo</th>
+      <th scope="col">Deletar</th>
+      <th scope="col">Atualizar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Each serve como um for -->
+    {{#each posts}}
+        <tr>
+            <th scope="row">{{id}}</th>
+            <td>{{titulo}}</td>
+            <td>{{conteudo}}</td>
+            <td><a href="/deletar/{{id}}"><button class="btn btn-danger">Deletar</button></a></td>
+            <td><a href="/atualizar/{{id}}"><button class="btn btn-primary">Atualizar</button></a></td>
+        </tr>
+    {{/each}}
+  </tbody>
+</table>
+</div>
